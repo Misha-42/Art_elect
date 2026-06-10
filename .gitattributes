@@ -1,0 +1,24 @@
+# Auto-detect text files
+* text=auto
+
+# DOCX — binary
+*.docx binary
+
+# Python
+*.py text diff=python
+
+# Markdown
+*.md text
+
+# CSV
+*.csv text
+
+# JSON
+*.json text
+
+# YAML
+*.yml text
+*.yaml text
+
+# Lock files
+*.lock text

@@ -1,0 +1,24 @@
+name: Update AI Navigation
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.github/**'
+      - 'claude/**'
+
+jobs:
+  update-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update AI-INDEX.json timestamp
+        run: |
+          echo "Navigation updated at $(date -u)" >> CHANGELOG-AI.md
+      - name: Commit auto-update
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add CHANGELOG-AI.md AI-INDEX.json
+          git diff --staged --quiet || git commit -m "[BOT] авто: навигация обновлена [skip ci]"
+          git push

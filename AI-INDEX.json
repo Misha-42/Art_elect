@@ -1,0 +1,50 @@
+{
+  "project": "Art_elect — Интеллектуальная система управления Ишимбайскими РЭС",
+  "version": "1.0.0",
+  "author": "Мусин Артем Робертович",
+  "supervisor": "Муравьева Е.А.",
+  "enterprise": "ООО «Башкирэнерго»",
+  "files": {
+    "entry_points": {
+      "AI-NAVIGATOR.md": "Точка входа для ИИ-агентов",
+      "CLAUDE.md": "Адаптер для Claude Code",
+      "README.md": "Обзор проекта для людей"
+    },
+    "rules": {
+      "AI-PROJECT-RULES.md": "Правила работы для агентов",
+      "AGENTS.md": "Правила коммитов и пуша"
+    },
+    "anchors": {
+      "AI-ANCHORS.md": "Ключевые якоря проекта",
+      "AI-INDEX.json": "Машинная карта (этот файл)"
+    },
+    "docs": {
+      "docs/ROADMAP_10_STEPS.md": "План развития (10 шагов)",
+      "docs/ARCHITECTURE_LAYERS.md": "3 слоя архитектуры",
+      "docs/DECISION.txt": "Технические решения",
+      "docs/BACKLOG.md": "Сводная таблица метрик",
+      "docs/WORKLOG.md": "Ежедневный лог",
+      "docs/ML_GLOSSARY.md": "Словарь терминов",
+      "docs/TECHNIQUES.md": "Техники работы",
+      "docs/DATA_NAVIGATION.md": "Источники данных"
+    },
+    "nir": {
+      "nir/Musin_NIR2_.docx": "НИР-2 (отчёт по практике)"
+    },
+    "experiments": {
+      "experiments/DATASETS.md": "Реестр датасетов"
+    }
+  },
+  "modules": {
+    "monitoring": "Сбор и валидация телеметрии (MQTT)",
+    "diagnostics": "Классификация состояния сети",
+    "forecasting": "CatBoost: нагрузка + отказы",
+    "control": "Экспертная система + режим советчика"
+  },
+  "standards": [
+    "ГОСТ 32144-2021",
+    "ГОСТ Р МЭК 61968-1-2019",
+    "ФЗ-187 (КИИ)",
+    "ПТЭЭП"
+  ]
+}

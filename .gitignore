@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data (raw data not tracked)
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+*.parquet
+!**/datasets/*.md
+
+# Models (binary files)
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.json
+models/**/*.onnx
+!models/**/*.md
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+settings.local.json
+
+# Docker
+.docker/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# Secrets
+*.pem
+*.key
+*.cert
