@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Витрина проекта Art_elect: НИР-1, НИР-2, графики, таблицы, схемы и экспериментальные результаты.">
+  <title>Art_elect — витрина проекта</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="orb orb--left" aria-hidden="true"></div>
+  <div class="orb orb--right" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Art_elect, к началу страницы">
+        <span class="brand__mark">AE</span>
+        <span class="brand__text">
+          <strong>Art_elect</strong>
+          <small>витрина проекта</small>
+        </span>
+      </a>
+
+      <nav class="topnav" aria-label="Основная навигация">
+        <a href="#roadmap">Этапы</a>
+        <a href="#architecture">Архитектура</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#experiments">Эксперимент</a>
+        <a href="#sources">Артефакты</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <a class="button button--ghost" href="../nir/Musin_NIR1_.docx">НИР-1</a>
+        <a class="button button--solid" href="../nir/Musin_NIR2_.docx">НИР-2</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section section--hero" id="top">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">НИР-1 → НИР-2 → НИР-3</p>
+          <h1>Интеллектуальная система управления Ишимбайскими РЭС</h1>
+          <p class="lead">
+            Витрина собирает теорию, практическую реализацию и задел на следующий этап.
+            Здесь собраны схемы, таблицы, отчётные графики и экспериментальные материалы,
+            чтобы проект можно было показывать как цельный продукт, а не как набор разрозненных файлов.
+          </p>
+
+          <div class="cta-row">
+            <a class="button button--solid" href="../nir/Musin_NIR2_.docx">Открыть НИР-2</a>
+            <a class="button button--ghost" href="#gallery">Перейти к галерее</a>
+          </div>
+
+          <div class="chip-row" aria-label="Ключевые показатели витрины">
+            <span class="chip chip--blue">20 рисунков НИР-2</span>
+            <span class="chip chip--amber">9 таблиц отчёта</span>
+            <span class="chip chip--green">1 схема периметра</span>
+            <span class="chip chip--slate">30 встроенных медиа</span>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <strong>3</strong>
+              <span>этапа проекта</span>
+            </article>
+            <article class="stat-card">
+              <strong>3</strong>
+              <span>типа зон сети</span>
+            </article>
+            <article class="stat-card">
+              <strong>4</strong>
+              <span>экспериментальных стека</span>
+            </article>
+            <article class="stat-card">
+              <strong>1</strong>
+              <span>современная витрина</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="mosaic">
+            <figure class="mosaic__card mosaic__card--large">
+              <img src="../plots/fig_02_01_architecture.png" alt="Трёхуровневая архитектура интеллектуальной системы управления">
+              <figcaption>Архитектура НИР-2</figcaption>
+            </figure>
+            <figure class="mosaic__card">
+              <img src="../plots/fig_02_13_fault_localization.png" alt="Алгоритм выявления и локализации повреждений">
+              <figcaption>Локализация аварий</figcaption>
+            </figure>
+            <figure class="mosaic__card">
+              <img src="../plots/fig_02_20_acceptance.png" alt="Критерии приёмки и дорожная карта пилотного внедрения">
+              <figcaption>Критерии приёмки</figcaption>
+            </figure>
+          </div>
+
+          <aside class="hero-note">
+            <p class="hero-note__eyebrow">Сценарий витрины</p>
+            <h2>От отчёта к демонстрации</h2>
+            <p>
+              Макет собран как статическая страница: быстро открывается, не требует сборки
+              и опирается только на локальные артефакты проекта.
+            </p>
+            <ul class="bullets">
+              <li>локальные превью фигур и таблиц;</li>
+              <li>фильтруемая галерея всего комплекта;</li>
+              <li>экспериментальные графики и метрики.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">План работ</p>
+          <h2>Три стадии, которые складываются в один проект</h2>
+          <p class="section-lead">
+            НИР-1 отвечает за теоретическую рамку, НИР-2 превращает её в архитектуру и алгоритмы,
+            а НИР-3 закрепит практику, проверку и масштабирование.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <article class="phase-card" data-reveal>
+            <span class="phase-card__tag">НИР-1</span>
+            <h3>Обзор и постановка задачи</h3>
+            <p class="phase-card__date">Январь 2026</p>
+            <p>
+              Анализ литературы, существующих систем, требований к энергетическим сетям и
+              формирование исследовательской рамки для практической части.
+            </p>
+          </article>
+
+          <article class="phase-card phase-card--accent" data-reveal>
+            <span class="phase-card__tag">НИР-2</span>
+            <h3>Практическая реализация</h3>
+            <p class="phase-card__date">Май–июнь 2026</p>
+            <p>
+            Архитектура, поток данных, модель CatBoost (CatBoost), экспертная система, безопасность,
+              тестирование, валидация и дорожная карта пилотного внедрения.
+            </p>
+          </article>
+
+          <article class="phase-card" data-reveal>
+            <span class="phase-card__tag">НИР-3</span>
+            <h3>Выводы и масштабирование</h3>
+            <p class="phase-card__date">Следующий этап</p>
+            <p>
+              На основе собранных данных и результатов НИР-2 проект переходит к
+              проверке устойчивости, донастройке и подготовке к расширению.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Архитектура проекта</p>
+          <h2>Современная витрина должна быть структурной, а не декоративной</h2>
+          <p class="section-lead">
+            В основе страницы лежит тот же набор приёмов, который хорошо работает в популярных
+            репозиториях с приоритетом документации (documentation-first): крупный hero, карточные блоки, аккуратная сетка,
+            локальные медиа-артефакты и быстрая навигация по разделам.
+          </p>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="principles-grid">
+            <article class="principle-card" data-reveal>
+              <span class="principle-card__index">01</span>
+              <h3>Поток данных</h3>
+              <p>Оперативная телеметрия (SCADA), АИИС КУЭ, ГИС, метеоданные и календарные признаки сведены в единый конвейер.</p>
+            </article>
+
+            <article class="principle-card" data-reveal>
+              <span class="principle-card__index">02</span>
+              <h3>Прогноз и диагностика</h3>
+              <p>Модель CatBoost (CatBoost) и производные признаки дают прогнозную часть, а правила экспертной системы фиксируют действие.</p>
+            </article>
+
+            <article class="principle-card" data-reveal>
+              <span class="principle-card__index">03</span>
+              <h3>Безопасность и периметр</h3>
+              <p>МЭК 62443, демилитаризованная зона (DMZ), межсетевой экран нового поколения (NGFW), аутентификация, журналирование и изоляция зон идут в одном контуре.</p>
+            </article>
+
+            <article class="principle-card" data-reveal>
+              <span class="principle-card__index">04</span>
+              <h3>Тестирование и приёмка</h3>
+              <p>Модульная, интеграционная и системная проверка завершается пилотной дорожной картой.</p>
+            </article>
+          </div>
+
+          <aside class="preview-panel" data-reveal>
+            <div class="preview-panel__header">
+              <p class="eyebrow">Фокусный кадр</p>
+              <h3>Контур информационного обмена</h3>
+            </div>
+            <figure class="preview-panel__figure">
+              <img src="../plots/fig_02_04_information_flow.png" alt="Схема информационных потоков интеллектуальной системы управления">
+            </figure>
+            <p class="preview-panel__caption">
+              Локальные источники, предобработка, модельный слой и рекомендации диспетчеру собраны
+              в одном визуальном кадре для быстрой демонстрации логики проекта.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--gallery" id="gallery">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Галерея</p>
+          <div class="section-heading__row">
+            <h2>Все рисунки и таблицы собраны в одном месте</h2>
+            <span class="gallery-count"><span data-gallery-count>0</span> визуалов</span>
+          </div>
+          <p class="section-lead">
+            Нажмите на фильтр, чтобы показать только нужный слой отчёта: архитектуру, данные, машинное обучение (ML),
+            экспертные правила, алгоритмы, безопасность, тестирование, таблицы или дорожную карту.
+          </p>
+        </div>
+
+        <div class="filter-bar" role="tablist" aria-label="Фильтры галереи">
+          <button class="filter-chip is-active" type="button" data-filter="all">Все</button>
+          <button class="filter-chip" type="button" data-filter="architecture">Архитектура</button>
+          <button class="filter-chip" type="button" data-filter="data">Данные</button>
+          <button class="filter-chip" type="button" data-filter="ml">Машинное обучение</button>
+          <button class="filter-chip" type="button" data-filter="expert">Экспертная система</button>
+          <button class="filter-chip" type="button" data-filter="algorithms">Алгоритмы</button>
+          <button class="filter-chip" type="button" data-filter="security">Безопасность</button>
+          <button class="filter-chip" type="button" data-filter="testing">Тестирование</button>
+          <button class="filter-chip" type="button" data-filter="tables">Таблицы</button>
+          <button class="filter-chip" type="button" data-filter="roadmap">Внедрение</button>
+        </div>
+
+        <div class="gallery-grid" data-gallery></div>
+      </section>
+
+      <section class="section" id="experiments">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Экспериментальный слой</p>
+          <h2>Графики, метрики и проверка на синтетической телеметрии</h2>
+          <p class="section-lead">
+            Здесь собраны не только изображения из отчёта, но и рабочие артефакты экспериментов:
+            распределение классов, сравнение моделей, матрицы ошибок, признаки и динамика обучения.
+          </p>
+        </div>
+
+        <div class="experiment-grid">
+          <article class="experiment-card experiment-card--wide" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные данные</p>
+              <h3>Сравнение моделей на синтетической телеметрии</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_v3/metrics_comparison.png" alt="Сравнение метрик моделей для классификации режимов сети">
+            </figure>
+          </article>
+
+          <article class="experiment-card" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные данные</p>
+              <h3>Распределение режимов</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_v3/class_distribution.png" alt="Распределение классов в датасете">
+            </figure>
+          </article>
+
+          <article class="experiment-card" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные результаты</p>
+              <h3>Кривая обучения модели CatBoost (CatBoost)</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_art/plots/krivaya_obuchenia.png" alt="Кривая обучения модели CatBoost (CatBoost)">
+            </figure>
+          </article>
+
+          <article class="experiment-card" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные результаты</p>
+              <h3>Важность признаков</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_art/plots/vazhnost_priznakov_catboost.png" alt="Топ признаков модели CatBoost (CatBoost)">
+            </figure>
+          </article>
+
+          <article class="experiment-card" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные результаты</p>
+              <h3>Матрица ошибок модели CatBoost (CatBoost)</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_art/plots/matrica_oshibok_catboost.png" alt="Матрица ошибок модели CatBoost (CatBoost)">
+            </figure>
+          </article>
+
+          <article class="experiment-card" data-reveal>
+            <div class="experiment-card__head">
+              <p class="eyebrow">Экспериментальные данные</p>
+              <h3>Временной ряд и аномалии</h3>
+            </div>
+            <figure class="experiment-card__figure">
+              <img src="../experiments/energy-ml-v1_baseline/results_v3/time_series.png" alt="Временной ряд телеметрии">
+            </figure>
+          </article>
+        </div>
+
+        <div class="metrics-block" data-reveal>
+          <div class="metrics-block__head">
+            <div>
+              <p class="eyebrow">Числа из эксперимента</p>
+              <h3>Сводка метрик по результатам эксперимента</h3>
+            </div>
+            <p class="muted">
+              Временной сплит без перемешивания, что соответствует сценариям для телеметрии.
+            </p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="metrics-table">
+              <thead>
+                <tr>
+                  <th>Модель</th>
+                  <th>Сбалансированная точность (Balanced Accuracy)</th>
+                  <th>F1 (взвешенная)</th>
+                  <th>Площадь под ROC-кривой (ROC-AUC)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Случайный лес (Random Forest)</td>
+                  <td>0.5246</td>
+                  <td>0.9654</td>
+                  <td>0.8292</td>
+                </tr>
+                <tr>
+                  <td>Логистическая регрессия (Logistic Regression)</td>
+                  <td>0.7036</td>
+                  <td>0.8394</td>
+                  <td>0.8553</td>
+                </tr>
+                <tr>
+                  <td>Модель CatBoost (CatBoost)</td>
+                  <td>0.6698</td>
+                  <td>0.9286</td>
+                  <td>0.8386</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Артефакты</p>
+          <h2>Быстрый доступ к документам, скриптам и манифестам</h2>
+          <p class="section-lead">
+            Эта витрина не заменяет репозиторий, а собирает самые нужные точки входа в одном месте:
+            отчёты, генераторы, манифест визуалов и экспериментальные результаты.
+          </p>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card" href="../nir/Musin_NIR1_.docx" data-reveal>
+            <span class="link-card__label">Документ</span>
+            <strong>НИР-1</strong>
+            <span>Теоретический обзор и постановка задачи</span>
+          </a>
+          <a class="link-card" href="../nir/Musin_NIR2_.docx" data-reveal>
+            <span class="link-card__label">Документ</span>
+            <strong>НИР-2</strong>
+            <span>Практическая реализация и выводы</span>
+          </a>
+          <a class="link-card" href="../scripts/generate_report_figures.py" data-reveal>
+            <span class="link-card__label">Скрипт</span>
+            <strong>Генератор рисунков</strong>
+            <span>Набор схем и диаграмм в русском оформлении</span>
+          </a>
+          <a class="link-card" href="../scripts/generate_report_tables.py" data-reveal>
+            <span class="link-card__label">Скрипт</span>
+            <strong>Генератор таблиц</strong>
+            <span>Таблицы 1–9 с единым стилем и типографикой</span>
+          </a>
+          <a class="link-card" href="../plots/figures_manifest.csv" data-reveal>
+            <span class="link-card__label">Манифест</span>
+            <strong>Манифест визуалов</strong>
+            <span>Полный список визуалов и их типов</span>
+          </a>
+          <a class="link-card" href="../experiments/energy-ml-v1_baseline/results_v3/metrics_table.csv" data-reveal>
+            <span class="link-card__label">Данные</span>
+            <strong>Таблица метрик</strong>
+            <span>Сравнение моделей на синтетической телеметрии</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Art_elect · статическая витрина проекта для локального просмотра и демонстрации.</p>
+      <p>Все картинки и документы берутся из репозитория и открываются без сборки.</p>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

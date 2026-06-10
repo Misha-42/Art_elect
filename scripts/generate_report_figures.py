@@ -230,7 +230,7 @@ def fig_021_architecture():
         0.18,
         0.24,
         0.56,
-        "Полевой уровень\n\nRTU\nРЗА\nинтеллектуальные датчики\n\nДискретность:\n1 с – 1 мин",
+        "Полевой уровень\n\nТерминальные устройства (RTU)\nРЗА\nинтеллектуальные датчики\n\nДискретность:\n1 с – 1 мин",
         facecolor=COLORS["card2"],
         edgecolor=COLORS["blue"],
         fontsize=11,
@@ -254,7 +254,7 @@ def fig_021_architecture():
         0.18,
         0.24,
         0.56,
-        "Корпоративный уровень\n\nPostgreSQL / TimescaleDB\nCatBoost\nЭкспертная система\nSCADA / HMI",
+        "Корпоративный уровень\n\nХранилище временных рядов (TimescaleDB) на PostgreSQL\nМодель CatBoost (CatBoost)\nЭкспертная система\nдиспетчерский контур (SCADA)\nчеловеко-машинный интерфейс (HMI)",
         facecolor=COLORS["card3"],
         edgecolor=COLORS["green"],
         fontsize=11,
@@ -266,7 +266,7 @@ def fig_021_architecture():
     add_tag(ax, 0.2, 0.8, "Сбор")
     add_tag(ax, 0.5, 0.8, "Маршрутизация")
     add_tag(ax, 0.8, 0.8, "Аналитика")
-    add_caption(ax, "Трёхуровневая логика обеспечивает масштабируемость, отказоустойчивость и бесшовную интеграцию со SCADA.")
+    add_caption(ax, "Трёхуровневая логика обеспечивает масштабируемость, отказоустойчивость и бесшовную интеграцию с диспетчерским контуром (SCADA).")
     return fig
 
 
@@ -293,7 +293,7 @@ def fig_022_modules():
     notes = {
         "Мониторинг": "Сбор, валидация,\nагрегация",
         "Диагностика": "Норма / предупреждение / авария",
-        "Прогнозирование": "1–168 ч\nCatBoost",
+        "Прогнозирование": "1–168 ч\nМодель CatBoost (CatBoost)",
         "Управление": "Рекомендации\nв режиме советчика",
     }
     sizes = (0.22, 0.14)
@@ -438,7 +438,7 @@ def fig_024_information_flow():
 
     source_y = 0.74
     source_specs = [
-        (0.10, "Телеметрия SCADA", COLORS["card2"], COLORS["blue"], "U, I, P, Q, f"),
+        (0.10, "Телеметрия (SCADA)", COLORS["card2"], COLORS["blue"], "U, I, P, Q, f"),
         (0.10, "АИИС КУЭ", COLORS["card4"], COLORS["orange"], "Почасовой учёт"),
         (0.10, "Паспорт оборудования", COLORS["card3"], COLORS["green"], "Надёжность"),
         (0.10, "Метеоданные / ГИС / Календарь", "#F4F0FF", "#7C3AED", "Контекст"),
@@ -487,7 +487,7 @@ def fig_024_information_flow():
         0.56,
         0.20,
         0.14,
-        "Модели ML\n\nCatBoost / LightGBM / MLP",
+        "Модели машинного обучения (ML)\n\nCatBoost (CatBoost) / градиентный бустинг (LightGBM) / многослойный перцептрон (MLP)",
         facecolor=COLORS["card2"],
         edgecolor=COLORS["blue_dark"],
         fontsize=10.5,
@@ -499,7 +499,7 @@ def fig_024_information_flow():
         0.33,
         0.20,
         0.14,
-        "Управляющие рекомендации\n\nSCADA / АРМ диспетчера",
+        "Управляющие рекомендации\n\nдиспетчерский контур (SCADA) / АРМ диспетчера",
         facecolor=COLORS["card3"],
         edgecolor=COLORS["green"],
         fontsize=10.5,
@@ -521,7 +521,7 @@ def fig_024_information_flow():
         color=COLORS["ink"],
         fontweight="bold",
     )
-    add_caption(ax, "Все каналы сведены в единое пространство данных с обратной связью в SCADA.")
+    add_caption(ax, "Все каналы сведены в единое пространство данных с обратной связью в диспетчерский контур (SCADA).")
     return fig
 
 
@@ -534,10 +534,10 @@ def fig_025_sources():
     draw_grid_background(ax)
 
     cards = [
-        (0.08, 0.58, "SCADA / РЗА", "Оперативная телеметрия", COLORS["card2"], COLORS["blue"], "1 с – 1 мин"),
+        (0.08, 0.58, "Диспетчерская телеметрия (SCADA) / РЗА", "Оперативная телеметрия", COLORS["card2"], COLORS["blue"], "1 с – 1 мин"),
         (0.38, 0.58, "АИИС КУЭ", "Коммерческий учёт", COLORS["card4"], COLORS["orange"], "1 ч / 30 мин"),
         (0.68, 0.58, "Паспорт оборудования", "Техническое состояние активов", COLORS["card3"], COLORS["green"], "по событию"),
-        (0.08, 0.26, "Метеоданные", "Температура, ветер, влажность", "#F4F0FF", "#7C3AED", "JSON / CSV"),
+        (0.08, 0.26, "Метеоданные", "Температура, ветер, влажность", "#F4F0FF", "#7C3AED", "форматы JSON / CSV"),
         (0.38, 0.26, "ГИС", "Топология сети и координаты", "#FFF7ED", COLORS["amber"], "GeoJSON"),
         (0.68, 0.26, "Календарь / сменность", "Сезонность и режимы нагрузки", "#ECFEFF", COLORS["cyan"], "CSV"),
     ]
@@ -577,9 +577,9 @@ def fig_026_preprocessing():
     )
     draw_grid_background(ax)
     steps = [
-        ("Входные данные", "SCADA / АИИС / внешние источники", COLORS["card2"], COLORS["blue"]),
+        ("Входные данные", "телеметрия (SCADA) / АИИС / внешние источники", COLORS["card2"], COLORS["blue"]),
         ("Фильтрация шума", "Физические пределы и выбросы", COLORS["card4"], COLORS["orange"]),
-        ("Восстановление пропусков", "Интерполяция / буферизация / Imputation", COLORS["card3"], COLORS["green"]),
+        ("Восстановление пропусков", "Интерполяция / буферизация / восстановление пропусков (Imputation)", COLORS["card3"], COLORS["green"]),
         ("Нормализация и валидация", "Единый формат и контроль качества", "#F4F0FF", "#7C3AED"),
     ]
     xs = [0.08, 0.31, 0.54, 0.77]
@@ -664,7 +664,7 @@ def fig_027_features():
         0.36,
         0.24,
         0.22,
-        "Feature Store\n\nкодирование • взаимодействия • отбор",
+        "Хранилище признаков (Feature Store)\n\nкодирование • взаимодействия • отбор",
         facecolor="white",
         edgecolor=COLORS["blue_dark"],
         fontsize=11,
@@ -694,15 +694,15 @@ def fig_028_training():
     fig, ax = setup_canvas(
         (13, 7.5),
         "Рисунок 2.8 — Процедура обучения и настройки модели прогнозирования",
-        "Пошаговый цикл подготовки CatBoost-модели",
+        "Пошаговый цикл подготовки модели CatBoost (CatBoost)",
     )
     draw_grid_background(ax)
 
     stages = [
-        ("1", "Разделение данных", "Train 70%\nVal 15%\nTest 15%\nshuffle=False", COLORS["card2"], COLORS["blue"]),
-        ("2", "Подбор гиперпараметров", "Grid / Random Search\nглубина • learning_rate\nколичество итераций", COLORS["card4"], COLORS["orange"]),
-        ("3", "Регуляризация", "L2\nmax_depth ≤ 8\nsubsample ≤ 0,8", COLORS["card3"], COLORS["green"]),
-        ("4", "Ранняя остановка", "early_stopping_rounds = 50\nсохранение лучшей версии", "#F4F0FF", "#7C3AED"),
+        ("1", "Разделение данных", "Обучение 70%\nВалидация 15%\nТест 15%\nбез перемешивания (shuffle=False)", COLORS["card2"], COLORS["blue"]),
+        ("2", "Подбор гиперпараметров", "Полный поиск / случайный поиск (Grid / Random Search)\nглубина • скорость обучения (learning_rate)\nколичество итераций", COLORS["card4"], COLORS["orange"]),
+        ("3", "Регуляризация", "L2\nмаксимальная глубина ≤ 8 (max_depth)\nподвыборка ≤ 0,8 (subsample)", COLORS["card3"], COLORS["green"]),
+        ("4", "Ранняя остановка", "ранняя остановка: 50 раундов (early_stopping_rounds)\nсохранение лучшей версии", "#F4F0FF", "#7C3AED"),
     ]
     for i, (n, title, subtitle, fc, ec) in enumerate(stages):
         x = 0.08 + i * 0.23
@@ -733,9 +733,9 @@ def fig_028_training():
         fontsize=11,
         weight="bold",
     )
-    add_tag(ax, 0.30, 0.28, "depth 6–8")
-    add_tag(ax, 0.50, 0.28, "lr 0,03–0,10")
-    add_tag(ax, 0.70, 0.28, "random_state = 42")
+    add_tag(ax, 0.30, 0.14, "глубина 6–8")
+    add_tag(ax, 0.50, 0.14, "скорость обучения 0,03–0,10")
+    add_tag(ax, 0.70, 0.14, "фиксированное зерно 42")
     add_caption(ax, "Воспроизводимость обеспечивается фиксированием параметров, временем и конфигурацией моделей.")
     return fig
 
@@ -745,9 +745,9 @@ def fig_029_metrics():
     fig.patch.set_facecolor(COLORS["bg"])
     zones = ["Городская", "Промышленная", "Сельская"]
     data = {
-        "MAE, %": ([4.0, 5.5, 7.5], [1.0, 1.5, 2.5], COLORS["blue"]),
-        "RMSE, %": ([6.5, 8.5, 11.5], [1.5, 1.5, 3.5], COLORS["orange"]),
-        "R²": ([0.925, 0.885, 0.850], [0.025, 0.035, 0.050], COLORS["green"]),
+        "Средняя абсолютная ошибка (MAE), %": ([4.0, 5.5, 7.5], [1.0, 1.5, 2.5], COLORS["blue"]),
+        "Среднеквадратичная ошибка (RMSE), %": ([6.5, 8.5, 11.5], [1.5, 1.5, 3.5], COLORS["orange"]),
+        "Коэффициент детерминации (R²)": ([0.925, 0.885, 0.850], [0.025, 0.035, 0.050], COLORS["green"]),
     }
     for ax, (title, (means, errs, color)) in zip(axes, data.items()):
         ax.set_facecolor("white")
@@ -759,8 +759,8 @@ def fig_029_metrics():
         ax.grid(axis="y", color=COLORS["grid"], linestyle="--", linewidth=0.8)
         ax.set_axisbelow(True)
         for xi, val in zip(x, means):
-            ax.text(xi, val + max(errs) * 0.12, f"{val:.3f}" if title == "R²" else f"{val:.1f}", ha="center", va="bottom", fontsize=10, fontweight="bold")
-        if title == "R²":
+            ax.text(xi, val + max(errs) * 0.12, f"{val:.3f}" if "R²" in title else f"{val:.1f}", ha="center", va="bottom", fontsize=10, fontweight="bold")
+        if "R²" in title:
             ax.set_ylim(0.78, 0.98)
         else:
             ax.set_ylim(0, 15)
@@ -854,7 +854,7 @@ def fig_0211_knowledge_base():
         0.40,
         0.34,
         0.28,
-        "Экспертный движок\n\n1. Matching\n2. Conflict Resolution\n3. Acting\n4. Logging",
+        "Экспертный движок\n\n1. Сопоставление (Matching)\n2. Разрешение конфликтов (Conflict Resolution)\n3. Исполнение (Acting)\n4. Журналирование (Logging)",
         facecolor="white",
         edgecolor=COLORS["blue_dark"],
         fontsize=11,
@@ -872,14 +872,14 @@ def fig_0212_hybrid_architecture():
     fig, ax = setup_canvas(
         (13, 7.5),
         "Рисунок 2.12 — Схема взаимодействия модулей в гибридной архитектуре системы",
-        "CatBoost + экспертная система + проверка нормативных ограничений",
+        "Модель CatBoost (CatBoost) + экспертная система + проверка нормативных ограничений",
     )
     draw_grid_background(ax)
     nodes = [
-        (0.10, 0.52, 0.18, 0.16, "Прогнозирование\nCatBoost", COLORS["card2"], COLORS["blue"]),
+        (0.10, 0.52, 0.18, 0.16, "Прогнозирование\nмодель CatBoost (CatBoost)", COLORS["card2"], COLORS["blue"]),
         (0.36, 0.72, 0.20, 0.16, "Генерация рекомендаций\nЭкспертная система", COLORS["card4"], COLORS["orange"]),
         (0.62, 0.52, 0.18, 0.16, "Верификация\nНормативы и топология", COLORS["card3"], COLORS["green"]),
-        (0.36, 0.22, 0.20, 0.16, "Исполнение\nSCADA / АРМ", "#F4F0FF", "#7C3AED"),
+        (0.36, 0.22, 0.20, 0.16, "Исполнение\nдиспетчерский контур (SCADA) / АРМ", "#F4F0FF", "#7C3AED"),
     ]
     for x, y, w, h, text, fc, ec in nodes:
         add_shadow_box(ax, x, y, w, h, text, facecolor=fc, edgecolor=ec, fontsize=10.4, weight="bold")
@@ -923,7 +923,7 @@ def fig_0213_fault_localization():
             add_arrow(ax, (x + 0.17, 0.55), (x + 0.23, 0.55), color=ec)
 
     ax.add_patch(Circle((0.50, 0.25), 0.08, facecolor="#FEE2E2", edgecolor=COLORS["red"], linewidth=1.8))
-    ax.text(0.50, 0.25, "FAULT", ha="center", va="center", fontsize=10, fontweight="bold", color=COLORS["red"])
+    ax.text(0.50, 0.25, "АВАРИЯ", ha="center", va="center", fontsize=10, fontweight="bold", color=COLORS["red"])
     add_caption(ax, "Порог срабатывания связан с отклонениями тока и напряжения от допустимых границ.")
     return fig
 
@@ -1002,9 +1002,9 @@ def fig_0216_auth_audit():
     )
     draw_grid_background(ax)
     cards = [
-        (0.08, "Аутентификация", "MFA\nсертификаты\nSSO", COLORS["card2"], COLORS["blue"]),
-        (0.39, "Авторизация", "RBAC\nроли и права\nограничение функций", COLORS["card4"], COLORS["orange"]),
-        (0.70, "Аудит", "журналы событий\nSIEM\nкриптографическая фиксация", COLORS["card3"], COLORS["green"]),
+        (0.08, "Аутентификация", "многофакторная аутентификация (MFA)\nсертификаты\nединый вход (SSO)", COLORS["card2"], COLORS["blue"]),
+        (0.39, "Авторизация", "управление доступом по ролям (RBAC)\nроли и права\nограничение функций", COLORS["card4"], COLORS["orange"]),
+        (0.70, "Аудит", "журналы событий\nсистема корреляции событий безопасности (SIEM)\nкриптографическая фиксация", COLORS["card3"], COLORS["green"]),
     ]
     for x, title, subtitle, fc, ec in cards:
         add_shadow_box(ax, x, 0.30, 0.22, 0.32, f"{title}\n\n{subtitle}", facecolor=fc, edgecolor=ec, fontsize=10.6, weight="bold")
@@ -1025,9 +1025,9 @@ def fig_0217_crypto_resilience():
     )
     draw_grid_background(ax)
     cards = [
-        (0.08, "Шифрование каналов", "TLS 1.3\nГОСТ 34.12-2018\nбезопасный трафик", COLORS["card2"], COLORS["blue"]),
+        (0.08, "Шифрование каналов", "канальное шифрование (TLS 1.3)\nГОСТ 34.12-2018\nбезопасный трафик", COLORS["card2"], COLORS["blue"]),
         (0.39, "Контроль целостности", "хеш-суммы\nпроверка конфигураций\nверификация ПО", COLORS["card4"], COLORS["orange"]),
-        (0.70, "Аварийное резервирование", "fallback\nфиксация состояния\nрежим защиты", COLORS["card3"], COLORS["green"]),
+        (0.70, "Аварийное резервирование", "резервный режим (fallback)\nфиксация состояния\nрежим защиты", COLORS["card3"], COLORS["green"]),
     ]
     for x, title, subtitle, fc, ec in cards:
         add_shadow_box(ax, x, 0.30, 0.22, 0.32, f"{title}\n\n{subtitle}", facecolor=fc, edgecolor=ec, fontsize=10.2, weight="bold")
@@ -1036,7 +1036,7 @@ def fig_0217_crypto_resilience():
     ax.text(
         0.50,
         0.20,
-        "RTO ≤ 15 мин",
+        "время восстановления (RTO) ≤ 15 мин",
         ha="center",
         va="center",
         fontsize=12,
@@ -1052,12 +1052,12 @@ def fig_0218_testing():
     fig, ax = setup_canvas(
         (13, 7.5),
         "Рисунок 2.18 — Схема процедур тестирования компонентов интеллектуальной системы управления",
-        "От unit-тестов к цифровому двойнику распределительной сети",
+        "От модульных тестов к цифровому двойнику распределительной сети",
     )
     draw_grid_background(ax)
     cards = [
-        (0.08, "Модульное тестирование", "unit-тесты\nсинтетические выборки\nпокрытие кода ≥ 85%", COLORS["card2"], COLORS["blue"]),
-        (0.39, "Интеграционное тестирование", "промышленные шлюзы\nAPI\nOPC UA / IEC 60870-5-104", COLORS["card4"], COLORS["orange"]),
+        (0.08, "Модульное тестирование", "модульные тесты\nсинтетические выборки\nпокрытие кода ≥ 85%", COLORS["card2"], COLORS["blue"]),
+        (0.39, "Интеграционное тестирование", "промышленные шлюзы\nприкладной интерфейс (API)\nOPC UA / IEC 60870-5-104", COLORS["card4"], COLORS["orange"]),
         (0.70, "Системное тестирование", "цикл управления\nцифровой двойник\nштатные и аварийные режимы", COLORS["card3"], COLORS["green"]),
     ]
     for x, title, subtitle, fc, ec in cards:
@@ -1077,7 +1077,7 @@ def fig_0219_validation():
     )
     draw_grid_background(ax)
     cards = [
-        (0.08, "Ретроспективная проверка ML", "Walk-Forward\nR² > 0,85\nMAE / MAPE", COLORS["card2"], COLORS["blue"]),
+        (0.08, "Ретроспективная проверка машинного обучения (ML)", "скользящая ретроспективная проверка (Walk-Forward)\nR² > 0,85\nMAE / MAPE", COLORS["card2"], COLORS["blue"]),
         (0.39, "Верификация экспертной системы", "архив аварийных сценариев\nсравнение с действиями диспетчера", COLORS["card4"], COLORS["orange"]),
         (0.70, "Стресс-тестирование", "зашумлённые данные\nобрыв связи\nложные срабатывания", COLORS["card3"], COLORS["green"]),
     ]
@@ -1099,10 +1099,10 @@ def fig_0220_acceptance():
 
     # Left: criteria cards
     criteria = [
-        ("Функциональная готовность", "Полное соответствие ТЗ\nуспешные интеграционные тесты\nнет Critical/Blocker ошибок", COLORS["card2"], COLORS["blue"]),
-        ("Эксплуатационная надёжность", "Время отклика < 1 с\nвосстановление сессии ≤ 5 с\nFail-safe", COLORS["card4"], COLORS["orange"]),
+        ("Функциональная готовность", "Полное соответствие ТЗ\nинтеграционные тесты пройдены\nнет критических ошибок", COLORS["card2"], COLORS["blue"]),
+        ("Эксплуатационная надёжность", "Время отклика < 1 с\nвосстановление сессии ≤ 5 с\nбезопасный отказ", COLORS["card4"], COLORS["orange"]),
         ("Киберустойчивость", "ФЗ-187 и ФСТЭК № 239\nаутентификация, шифрование, аудит", COLORS["card3"], COLORS["green"]),
-        ("Экономическая эффективность", "Снижение потерь ≥ 3%\nсокращение SAIDI\n6 месяцев пилота", "#F4F0FF", "#7C3AED"),
+        ("Экономическая эффективность", "Снижение потерь ≥ 3%\nсокращение перерывов в питании\n6 месяцев пилота", "#F4F0FF", "#7C3AED"),
     ]
     for i, (title, subtitle, fc, ec) in enumerate(criteria):
         y = 0.72 - i * 0.15
@@ -1136,6 +1136,101 @@ def fig_0220_acceptance():
     return fig
 
 
+def fig_perimeter_architecture():
+    fig, ax = setup_canvas(
+        (13, 7.5),
+        "Архитектура защищённого периметра интеллектуальной системы управления",
+        "МЭК 62443: зоны, каналы (conduits) и демилитаризованная зона",
+    )
+    draw_grid_background(ax)
+
+    perimeter = FancyBboxPatch(
+        (0.06, 0.18),
+        0.88,
+        0.58,
+        boxstyle="round,pad=0.018,rounding_size=0.03",
+        linewidth=2.0,
+        edgecolor=COLORS["slate"],
+        facecolor="white",
+        zorder=1,
+    )
+    ax.add_patch(perimeter)
+    ax.text(
+        0.5,
+        0.76,
+        "Зоны и каналы (Zone & Conduit)",
+        ha="center",
+        va="center",
+        fontsize=13,
+        color=COLORS["blue_dark"],
+        fontweight="bold",
+        bbox=dict(boxstyle="round,pad=0.25,rounding_size=0.08", facecolor="white", edgecolor=COLORS["blue"], linewidth=1.3),
+    )
+
+    add_shadow_box(
+        ax,
+        0.09,
+        0.30,
+        0.23,
+        0.28,
+        "Полевой уровень\n\nТерминальные устройства (RTU), РЗА, датчики\nлокальные шкафы\nфизический доступ",
+        facecolor=COLORS["card2"],
+        edgecolor=COLORS["blue"],
+        fontsize=10.2,
+        weight="bold",
+    )
+    add_shadow_box(
+        ax,
+        0.40,
+        0.30,
+        0.18,
+        0.28,
+        "Демилитаризованная зона (DMZ)\n\nмежсетевой экран нового поколения (NGFW) / глубокий анализ пакетов (DPI)\nпромышленные шлюзы\nконтроль трафика",
+        facecolor=COLORS["card4"],
+        edgecolor=COLORS["orange"],
+        fontsize=10.1,
+        weight="bold",
+    )
+    add_shadow_box(
+        ax,
+        0.67,
+        0.30,
+        0.24,
+        0.28,
+        "Корпоративный уровень\n\nдиспетчерский контур (SCADA), БД, система корреляции событий безопасности (SIEM)\nАРМ диспетчера\nаналитические сервера",
+        facecolor=COLORS["card3"],
+        edgecolor=COLORS["green"],
+        fontsize=10.1,
+        weight="bold",
+    )
+
+    add_arrow(ax, (0.32, 0.49), (0.40, 0.49), color=COLORS["blue"])
+    add_arrow(ax, (0.58, 0.49), (0.67, 0.49), color=COLORS["green"])
+    add_arrow(ax, (0.58, 0.40), (0.40, 0.40), color=COLORS["orange"], rad=-0.12)
+    add_arrow(ax, (0.40, 0.57), (0.32, 0.57), color=COLORS["cyan"], rad=0.08)
+
+    pill_specs = [
+        (0.22, 0.20, "Шифрование и МФА"),
+        (0.50, 0.20, "Роли и журнал"),
+        (0.78, 0.20, "Контроль DMZ"),
+    ]
+    for x, y, text in pill_specs:
+        add_tag(ax, x, y, text, color=COLORS["slate"])
+
+    ax.text(
+        0.50,
+        0.12,
+        "Прямая маршрутизация между зонами исключена: обмен проходит через демилитаризованную зону (DMZ) и контролируемые каналы связи.",
+        ha="center",
+        va="center",
+        fontsize=10.5,
+        color=COLORS["slate"],
+        fontweight="bold",
+    )
+    add_caption(ax, "Защищённый периметр реализует эшелонированную защиту, разделение зон и контроль доверенных проводников данных.")
+    return fig
+
+
 FIGURE_BUILDERS = [
     ("fig_02_01_architecture.png", "Рисунок 2.1 — Трёхуровневая архитектура интеллектуальной системы управления", fig_021_architecture),
     ("fig_02_02_modules.png", "Рисунок 2.2 — Схема взаимодействия функциональных модулей интеллектуальной системы управления", fig_022_modules),
@@ -1160,6 +1255,11 @@ FIGURE_BUILDERS = [
 ]
 
 
+SUPPLEMENTAL_FIGURE_BUILDERS = [
+    ("fig_02_perimeter_architecture.png", "Рисунок – Архитектура защищённого периметра интеллектуальной системы управления", fig_perimeter_architecture),
+]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Генератор русскоязычных рисунков для НИР")
     parser.add_argument("--output", type=str, default=str(DEFAULT_OUTPUT), help="Каталог для сохранения PNG")
@@ -1177,13 +1277,19 @@ def main():
         manifest_rows.append({"file": filename, "caption": caption, "type": "figure"})
         print(f"Сохранено: {output_dir / filename}")
 
+    for filename, caption, builder in SUPPLEMENTAL_FIGURE_BUILDERS:
+        fig = builder()
+        save_figure(fig, output_dir / filename)
+        manifest_rows.append({"file": filename, "caption": caption, "type": "supplemental"})
+        print(f"Сохранено: {output_dir / filename}")
+
     with manifest_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["file", "caption", "type"])
         writer.writeheader()
         writer.writerows(manifest_rows)
 
     print(f"Манифест: {manifest_path}")
-    print(f"Готово: {len(manifest_rows)} рисунков")
+    print(f"Готово: {len(FIGURE_BUILDERS)} основных рисунков и {len(SUPPLEMENTAL_FIGURE_BUILDERS)} дополнительных")
 
 
 if __name__ == "__main__":
