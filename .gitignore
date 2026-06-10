@@ -16,6 +16,7 @@ env/
 .vscode/
 *.swp
 *.swo
+~$*.docx
 
 # OS
 Thumbs.db
