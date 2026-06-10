@@ -53,6 +53,9 @@ settings.local.json
 # MLflow
 mlruns/
 
+# CatBoost training info
+catboost_info/
+
 # Secrets
 *.pem
 *.key
